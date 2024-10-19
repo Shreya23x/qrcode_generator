@@ -1,0 +1,125 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+.container {
+  width: 100vw;
+  height: 100vh;
+  background: #262a3f;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.qrBox {
+  background-color: #fff;
+  width: 400px; /* Fixed width for the QR box */
+  border-radius: 10px;
+  padding: 20px; /* Added padding for better spacing */
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* Added shadow for a card-like effect */
+}
+
+.heading {
+  text-align: center;
+  margin-bottom: 15px; /* Added margin for spacing */
+}
+
+.heading p {
+  font-style: normal;
+  font-size: 20px;
+}
+
+.inputBox {
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+.inputBox input {
+  width: 80%;
+  height: 40px;
+  font-size: larger;
+  border-radius: 7px;
+  border: 1px solid #ccc; /* Added border for the input */
+  padding-left: 10px; /* Added padding for better input text position */
+}
+
+/* Shake animation when an error occurs */
+.inputBox.shake input {
+  animation: shake 0.5s;
+  animation-iteration-count: 1;
+}
+
+@keyframes shake {
+  0% { transform: translate(1px, 1px) rotate(0deg); }
+  10% { transform: translate(-1px, -2px) rotate(-1deg); }
+  20% { transform: translate(-3px, 0px) rotate(1deg); }
+  30% { transform: translate(3px, 2px) rotate(0deg); }
+  40% { transform: translate(1px, -1px) rotate(1deg); }
+  50% { transform: translate(-1px, 2px) rotate(-1deg); }
+  60% { transform: translate(-3px, 1px) rotate(0deg); }
+  70% { transform: translate(3px, 1px) rotate(-1deg); }
+  80% { transform: translate(-1px, -1px) rotate(1deg); }
+  90% { transform: translate(1px, 2px) rotate(0deg); }
+  100% { transform: translate(1px, -2px) rotate(-1deg); }
+}
+
+.btn {
+  display: flex;
+  padding-top: 30px;
+  justify-content: center;
+}
+
+.btn button {
+  width: 83%;
+  height: 35px;
+  border: none;
+  outline: none;
+  background-color: #494eea;
+  color: #fff;
+  transition: all 0.5s;
+  border-radius: 4px;
+}
+
+.btn button:hover {
+  background-color: #fff;
+  color: #494eea;
+  border: #494eea solid 1px;
+}
+
+.qrCode {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 20px;
+  transition: cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+
+.noQr {
+  display: flex;
+}
+
+.showQr {
+  display: flex;
+  margin-top: 10px;
+  transition: all 0.4s;
+  justify-content: center;
+  align-items: center;
+}
+
+.showQr img {
+  max-width: 100%;
+  height: auto;
+  opacity: 0;
+  transform: scale(0.8);
+  transition: opacity 0.6s ease , transform 0.6s ease;
+}
+.showQr img.visible {
+opacity: 1;
+transform: scale(1);
+}
